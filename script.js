@@ -1,7 +1,7 @@
-// FIXME Assurez vous que ces deux variables contiennent bien les bonnes choses ;-)
 let player = $('.player__video').first();
 let progress = $('.progress__filled').first();
 
+//create button pause and alternate between play and pause
 $("button").click(function (event) {
     if($(this).is(".toggle")) {
         player.trigger("play");
@@ -15,6 +15,7 @@ $("button").click(function (event) {
     }
 })
 
+//timeupdate
 player.on("timeupdate",function () {
     progress.css ( {
         "width": 100 * this.currentTime/this.duration
